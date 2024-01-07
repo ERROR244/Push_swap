@@ -1,0 +1,100 @@
+# include <stdbool.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
+
+typedef struct s_stack
+{
+    int                value;
+    struct s_stack    *next;
+    struct s_stack    *prev;
+}                    t_stack;
+
+t_stack    *lstlast(t_stack *lst)
+{
+    if (lst == NULL)
+        return (lst);
+    while (lst->next != NULL)
+    {
+        lst = lst->next;
+    }
+    return (lst);
+}
+
+void    lstadd_front(t_stack **lst, t_stack *new)
+{
+    if (new && lst)
+    {
+        new->next = *lst;
+        *lst = new;
+    }
+}
+
+t_stack    *lstnew(int value, t_stack *last_node)
+{
+    t_stack    *n_node;
+
+    n_node = (t_stack *)malloc(sizeof(struct s_stack));
+    if (n_node == NULL)
+        return (NULL);
+    n_node->value = value;
+    n_node->next = NULL;
+    if (!last_node)
+        n_node->prev = NULL;
+    n_node->prev = last_node;
+    return (n_node);
+}
+void    push_to(t_stack **stack1, t_stack **stack2)
+{
+    t_stack *last_node;
+    t_stack *curr;
+
+    curr = *stack1;
+    last_node = lstlast(*stack1);
+    while (curr->next->next != NULL)
+    {
+        curr = curr->next;
+    }
+    if (curr->next == last_node)
+        curr->next = NULL;
+    lstadd_front(stack2, last_node);
+}
+
+void    pa(t_stack **a, t_stack **b, bool print)
+{
+    push_to(b, a);
+    if (!print)
+        printf("pa\n");
+}
+
+void    pb(t_stack **a, t_stack **b, bool print)
+{
+    push_to(a, b);
+    if (!print)
+        printf("pb\n");
+}
+
+int main() {
+    t_stack *a;
+    t_stack *b;
+  
+    a = lstnew(1, NULL);
+    a->next = lstnew(2, lstlast(a));
+    a->next->next = lstnew(3, lstlast(a));
+    a->next->next->next = lstnew(4, lstlast(a));
+    pb(&a, &b, false);
+    pb(&a, &b, false);
+    pb(&a, &b, false);
+    while (a->next)
+    {
+        printf("%d \n", a->value);
+        a = a->next;
+    }
+    while (a)
+    {
+        printf("%d \n", a->value);
+        a = a->prev;
+    }
+    return 0;
+}

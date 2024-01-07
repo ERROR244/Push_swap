@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 13:32:12 by error01           #+#    #+#             */
-/*   Updated: 2024/01/04 13:32:43 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/06 13:14:09 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ long	ft_atol(const char *nptr)
 	return (sign * res);
 }
 
-void duplicates(long value, long *values, int k)
+void duplicates(long value, long *values, int k, int l)
 {
 	int i;
 
 	i = 0;
-	while (values[i])
+	while (i < l)
 	{
 		if (value == values[i] && i != k)
 		{
@@ -55,10 +55,10 @@ void duplicates(long value, long *values, int k)
 	}
 }
 
-void	errors1(long *values)
+void	errors1(long *values, int l)
 {
 	int i = 0;
-	while (values[i])
+	while (i < l)
 	{
 		if (values[i] > INT_MAX || values[i] < INT_MIN)
 		{
@@ -66,7 +66,7 @@ void	errors1(long *values)
 			printf("%ld- \n", values[i]);
 			exit(EXIT_FAILURE);
 		}
-		duplicates(values[i], values, i);
+		duplicates(values[i], values, i, l);
 		i++;
 	}
 	
