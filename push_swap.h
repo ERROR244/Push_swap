@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/07 09:52:46 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:57:06 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void				stack_init(t_stack **a, t_stack *node, long *values, int l);
 t_stack				*bigest_node(t_stack *a);
 void				sort_three(t_stack **a);
 int					size(char **str);
-void	pa(t_stack **a, t_stack **b, bool print);
-void	pb(t_stack **a, t_stack **b, bool print);
+void				pa(t_stack **a, t_stack **b, bool print);
+void				pb(t_stack **a, t_stack **b, bool print);
 
 #endif

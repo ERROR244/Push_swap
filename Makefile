@@ -1,6 +1,7 @@
 NAME	= push_swap
 
-SRCM	=	ft_split.c functions.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c rotate.c swap.c reverse_rotate.c functions1.c push.c
+SRCM	=	ft_split.c functions.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
+			lstsize.c rotate.c swap.c reverse_rotate.c functions1.c push.c
 
 OBJM	= ${SRCM:.c=.o}
 

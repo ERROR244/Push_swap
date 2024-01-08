@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "limits": "c",
+        "type_traits": "c"
     }
 }
