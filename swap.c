@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:31:43 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/06 10:24:54 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:19:01 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	swap(t_stack **a)
 
 void sa(t_stack **a, bool print)
 {
+	if (lstsize(*a) < 2)
+		return;
 	swap(a);
 	if (!print)
 		printf("sa\n");
@@ -34,6 +36,8 @@ void sa(t_stack **a, bool print)
 
 void sb(t_stack **b, bool print)
 {
+	if (lstsize(*b) < 2)
+		return;
 	swap(b);
 	if (!print)
 		printf("sb\n");
@@ -41,6 +45,8 @@ void sb(t_stack **b, bool print)
 
 void ss(t_stack **a, t_stack **b, bool print)
 {
+	if (lstsize(*a) < 2 || lstsize(*b) < 2)
+		return;
 	swap(a);
 	swap(b);
 	if (!print)

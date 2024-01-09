@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 11:08:02 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/07 11:37:14 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:24:17 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,12 @@ void	stack_init(t_stack **a, t_stack *node, long *values, int l)
 	t_stack *curr;
 
 	i = 1;
-	*a = lstnew((int)values[0], NULL);
+	*a = lstnew((int)values[0], *a);
 	while (i < l)
 	{
-		node = lstnew((int)values[i], lstlast(*a));
-		lstadd_front(a, node);
+		node = lstnew((int)values[i], *a);
+		curr = lstlast(*a);
+		curr->next = node;
 		i++;
 	}
 }
