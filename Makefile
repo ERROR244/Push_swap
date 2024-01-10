@@ -6,7 +6,7 @@ SRCM	=	ft_split.c functions.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_fro
 
 OBJM	= ${SRCM:.c=.o}
 
-CCC		=  -fsanitize=address -g
+CCC		=  -fsanitize=address
 CC		= cc
 # CFLAGS	= -Wall -Werror -Wextra
 
@@ -17,7 +17,7 @@ FT_PRINTF	=	ft_printf/libftprintf.a
 all:		${NAME}
 
 ${NAME}:	${OBJM}
-	${CC} ${OBJM} -o ${NAME}
+	${CC} ${CCC} ${OBJM} -o ${NAME}
 	
 clean:
 	rm -f ${OBJM}

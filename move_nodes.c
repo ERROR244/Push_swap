@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:36:36 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:19:47 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:57:01 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 void	revers_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*a != cheapest->target_node && *b != cheapest)
-		rr(a, b, false);
+		rrr(a, b, false);
 	set_the_position(*a);
 	set_the_position(*b);
 }
