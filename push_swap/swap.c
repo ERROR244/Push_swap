@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:31:43 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/09 18:20:31 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/11 12:36:23 by error01          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void    swap(t_stack **a)
 {
-    t_stack    *curr;
-
     if (*a && (*a)->next)
     {
-        curr = (*a)->next;
-        (*a)->next = curr->next;
-        curr->next->prev = *a;
-        curr->next = *a;
-        (*a)->prev = curr;
-        curr->prev = NULL;
-        *a = curr;
+        (*a)->prev = (*a)->next;
+    	*a = (*a)->next;
+		(*a)->prev->next = NULL;
+    	(*a)->next = (*a)->prev;
+    	(*a)->prev = NULL;
     }
 }
 

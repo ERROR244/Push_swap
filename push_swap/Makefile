@@ -2,7 +2,7 @@ NAME	= push_swap
 
 SRCM	=	ft_split.c functions.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
 			lstsize.c rotate.c swap.c reverse_rotate.c functions1.c push.c function3.c\
-			set_the_stacks.c move_nodes.c
+			set_the_stacks.c move_nodes.c Libft/ft_strlen.c
 
 OBJM	= ${SRCM:.c=.o}
 
@@ -16,8 +16,12 @@ FT_PRINTF	=	ft_printf/libftprintf.a
 
 all:		${NAME}
 
-${NAME}:	${OBJM}
-	${CC} ${CCC} ${OBJM} -o ${NAME}
+${LIBFT}:
+	make -C Libft
+
+
+${NAME}:	${LIBFT} ${OBJM}
+	${CC} ${LIBFT} ${OBJM} -o ${NAME}
 	
 clean:
 	rm -f ${OBJM}
