@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:34:46 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/10 09:57:13 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:13:45 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,7 @@ void	set_target_node(t_stack *a, t_stack *b)
 		if (best_match_index == LONG_MAX)
 			b->target_node = smallest_node(a);
 		else
-		{
 			(b)->target_node = target_node;
-		}
 		b = (b)->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:36:36 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/10 09:57:01 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:59:22 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	finish_rotation(t_stack **stack, t_stack *top_node, char stack_name)
 void	move_nodes(t_stack **a, t_stack **b)
 {
 	t_stack *cheapest;
-
+	
 	cheapest = get_the_cheapest(*b);
 	if (cheapest->above_the_midline && cheapest->target_node->above_the_midline)
 		rotate_both(a, b, cheapest);
