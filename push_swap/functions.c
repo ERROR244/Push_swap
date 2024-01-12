@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 13:32:12 by error01           #+#    #+#             */
-/*   Updated: 2024/01/06 13:14:09 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:45:23 by error01          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void duplicates(long value, long *values, int k, int l)
 		{
 			printf("Error\n		duplicates\n");
 			printf("%ld- \n", values[i]);
+			free(values);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -64,6 +65,7 @@ void	errors1(long *values, int l)
 		{
 			printf("Error\n		some arguments are bigger/less than an integer\n");
 			printf("%ld- \n", values[i]);
+			free(values);
 			exit(EXIT_FAILURE);
 		}
 		duplicates(values[i], values, i, l);

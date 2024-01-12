@@ -6,7 +6,7 @@
 /*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/11 12:20:02 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/12 12:05:00 by error01          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
+char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_split(char const *s, char c);
 long				ft_atol(const char *nptr);
 void				duplicates(long value, long *values, int k, int l);
@@ -42,7 +43,7 @@ void				error_msg1(void);
 void				errors0(char **argv);
 void				lstadd_back(t_stack **lst, t_stack *new);
 void				lstadd_front(t_stack **lst, t_stack *new);
-void				lstclear(t_stack **lst, void (*del)(void *));
+void				lstclear(t_stack **lst);
 t_stack				*lstlast(t_stack *lst);
 t_stack				*lstnew(int value, t_stack *stack);
 int					lstsize(t_stack *lst);
