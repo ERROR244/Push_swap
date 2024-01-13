@@ -1,14 +1,15 @@
 NAME	= push_swap
 
-SRCM	=	ft_split.c functions.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
-			lstsize.c rotate.c swap.c reverse_rotate.c functions1.c push.c function3.c\
-			set_the_stacks.c move_nodes.c Libft/ft_strdup.c Libft/ft_strjoin.c Libft/ft_strlen.c  lstclear.c
+SRCM	=	ft_split.c functions01.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
+			lstsize.c rotate.c swap.c reverse_rotate.c functions02.c push.c functions03.c\
+			set_the_stacks.c move_nodes.c Libft/ft_strdup.c Libft/ft_strjoin.c Libft/ft_strlen.c\
+			functions04.c lstclear.c
 
 OBJM	= ${SRCM:.c=.o}
 
-CCC		=  -fsanitize=address
+# CCC		=  -fsanitize=address
 CC		= cc
-# CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra
 
 
 LIBFT 	= Libft/libft.a
@@ -21,7 +22,7 @@ ${LIBFT}:
 
 
 ${NAME}:	${LIBFT} ${OBJM}
-	${CC} ${LIBFT} ${OBJM} -o ${NAME}
+	${CC} ${CFLAGS} ${LIBFT} ${OBJM} -o ${NAME}
 	
 clean:
 	rm -f ${OBJM}

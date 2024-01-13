@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 11:08:02 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/08 11:24:17 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/12 21:07:51 by error01          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ bool	is_nsorted(t_stack *a)
 	return (true);
 }
 
-void	stack_init(t_stack **a, t_stack *node, long *values, int l)
+void	stack_init(t_stack **a, long *values, int l)
 {
 	int i;
 	t_stack *curr;
+	t_stack *node;
 
 	i = 1;
 	*a = lstnew((int)values[0], *a);

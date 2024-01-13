@@ -6,7 +6,7 @@
 /*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/12 12:05:00 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/12 21:12:27 by error01          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,15 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
+typedef struct s_struct
+{
+	int i;
+	int l;
+	char *ptr;
+	long *values;
+	bool splited;
+}	t_struct;
 
 typedef struct s_stack
 {
@@ -37,10 +46,10 @@ typedef struct s_stack
 char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_split(char const *s, char c);
 long				ft_atol(const char *nptr);
-void				duplicates(long value, long *values, int k, int l);
-void				errors1(long *values, int l);
+int					duplicates(long value, long *values, int k, int l);
+int					errors1(long *values, int l);
 void				error_msg1(void);
-void				errors0(char **argv);
+int					errors0(char **argv);
 void				lstadd_back(t_stack **lst, t_stack *new);
 void				lstadd_front(t_stack **lst, t_stack *new);
 void				lstclear(t_stack **lst);
@@ -60,7 +69,7 @@ void				rra(t_stack **a, bool print);
 void				rrb(t_stack **b, bool print);
 void				rrr(t_stack **a, t_stack **b, bool print);
 bool				is_nsorted(t_stack *a);
-void				stack_init(t_stack **a, t_stack *node, long *values, int l);
+void				stack_init(t_stack **a, long *values, int l);
 t_stack				*bigest_node(t_stack *a);
 void				sort_three(t_stack **a);
 int					size(char **str);
@@ -70,6 +79,10 @@ t_stack				*smallest_node(t_stack *stack);
 void				set_the_stacks(t_stack *a, t_stack *b);
 void				set_the_position(t_stack *stack);
 void				move_nodes(t_stack **a, t_stack **b);
+long				*error_handel(char **argv);
+void				sort_all(t_stack **a, t_stack **b);
+void	    		swap_to(t_stack **a, bool print);
+void				stack(t_stack **a, t_stack **b, t_struct var);
 void				finish_rotation(t_stack **stack, t_stack *top_node,
 						char stack_name);
 
