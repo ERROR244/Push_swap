@@ -3,6 +3,8 @@
         "push_swap.h": "c",
         "limits": "c",
         "type_traits": "c",
-        "ft_printf.h": "c"
+        "ft_printf.h": "c",
+        "checker.h": "c",
+        "limits.h": "c"
     }
 }

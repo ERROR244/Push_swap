@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/13 09:25:28 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/13 13:02:26 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void				set_the_position(t_stack *stack);
 void				move_nodes(t_stack **a, t_stack **b);
 long				*error_handel(char **argv);
 void				sort_all(t_stack **a, t_stack **b);
-void				swap_to(t_stack **a, bool print);
 void				stack(t_stack **a, t_stack **b, t_struct var);
 void				finish_rotation(t_stack **stack, t_stack *top_node,
 						char stack_name);

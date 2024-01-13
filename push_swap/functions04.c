@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:10:49 by error01           #+#    #+#             */
-/*   Updated: 2024/01/13 11:08:27 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/13 13:02:08 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,27 +64,13 @@ void	sort_all(t_stack **a, t_stack **b)
 			rra(a, false);
 }
 
-void	swap_to(t_stack **a, bool print)
-{
-	if (*a && (*a)->next)
-	{
-		(*a)->prev = (*a)->next;
-		*a = (*a)->next;
-		(*a)->prev->next = NULL;
-		(*a)->next = (*a)->prev;
-		(*a)->prev = NULL;
-	}
-	if (!print)
-		printf("sa\n");
-}
-
 void	stack(t_stack **a, t_stack **b, t_struct var)
 {
 	stack_init(a, var.values, var.l);
 	if (!is_nsorted(*a))
 	{
 		if (var.l == 2)
-			swap_to(a, false);
+			sa(a, false);
 		else if (var.l == 3)
 			sort_three(a);
 		else if (var.l > 3)

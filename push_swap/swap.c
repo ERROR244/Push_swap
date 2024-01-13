@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:31:43 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/13 09:25:42 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/13 13:13:33 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,15 @@ void	swap(t_stack **a)
 {
 	t_stack	*curr;
 
-	if (*a && (*a)->next)
+	if (*a && (*a)->next && lstsize(*a) == 2)
+	{
+		(*a)->prev = (*a)->next;
+		*a = (*a)->next;
+		(*a)->prev->next = NULL;
+		(*a)->next = (*a)->prev;
+		(*a)->prev = NULL;
+	}
+	else if (*a && (*a)->next && lstsize(*a) != 2)
 	{
 		curr = (*a)->next;
 		(*a)->next = curr->next;
