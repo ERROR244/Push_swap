@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_nodes.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:36:36 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/12 11:19:21 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/13 09:25:25 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	finish_rotation(t_stack **stack, t_stack *top_node, char stack_name)
 
 void	move_nodes(t_stack **a, t_stack **b)
 {
-	t_stack *cheapest;
-	
+	t_stack	*cheapest;
+
 	cheapest = get_the_cheapest(*b);
 	if (cheapest->above_the_midline && cheapest->target_node->above_the_midline)
 		rotate_both(a, b, cheapest);

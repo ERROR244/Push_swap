@@ -2,6 +2,7 @@
     "files.associations": {
         "push_swap.h": "c",
         "limits": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "ft_printf.h": "c"
     }
 }

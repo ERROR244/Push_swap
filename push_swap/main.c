@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:48:58 by error01           #+#    #+#             */
-/*   Updated: 2024/01/12 21:10:01 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/13 11:08:37 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	error(char **av)
+{
+	int i = 0;
+	
+	while (av[i])
+	{
+		if (av[i][0] == '\0')
+		{
+			ft_printf("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -18,11 +33,12 @@ int	main(int argc, char **argv)
 	t_stack		*a;
 	t_struct	var;
 
+	if (argc == 1 || (argc == 2 && !argv[0]))
+		return (1);
+	error(argv);
 	b = NULL;
 	a = NULL;
 	var.ptr = NULL;
-	if (argc == 1 || (argc == 2 && !argv[0]))
-		return (1);
 	var.l = 1;
 	while (var.l < argc)
 		var.ptr = ft_strjoin(var.ptr, argv[var.l++]);

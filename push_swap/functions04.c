@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions4.c                                       :+:      :+:    :+:   */
+/*   functions04.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:10:49 by error01           #+#    #+#             */
-/*   Updated: 2024/01/12 21:11:21 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/13 11:08:27 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ long	*error_handel(char **argv)
 void	sort_all(t_stack **a, t_stack **b)
 {
 	t_stack	*smallest;
-	int len_a;
+	int		len_a;
 
 	len_a = lstsize(*a);
 	while (len_a-- > 3)
@@ -64,16 +64,16 @@ void	sort_all(t_stack **a, t_stack **b)
 			rra(a, false);
 }
 
-void    swap_to(t_stack **a, bool print)
+void	swap_to(t_stack **a, bool print)
 {
 	if (*a && (*a)->next)
-    {
-        (*a)->prev = (*a)->next;
-    	*a = (*a)->next;
+	{
+		(*a)->prev = (*a)->next;
+		*a = (*a)->next;
 		(*a)->prev->next = NULL;
-    	(*a)->next = (*a)->prev;
-    	(*a)->prev = NULL;
-    }
+		(*a)->next = (*a)->prev;
+		(*a)->prev = NULL;
+	}
 	if (!print)
 		printf("sa\n");
 }

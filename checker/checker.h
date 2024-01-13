@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/13 09:25:28 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/13 10:33:23 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/13 10:56:24 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
-# include "Libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "../push_swap/Libft/libft.h"
+# include "../push_swap/ft_printf/ft_printf.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
@@ -50,8 +50,8 @@ int					duplicates(long value, long *values, int k, int l);
 int					errors1(long *values, int l);
 void				error_msg1(void);
 int					errors0(char **argv);
-void				lstadd_back(t_stack **lst, t_stack *new);
-void				lstadd_front(t_stack **lst, t_stack *new);
+void				lstadd_back(t_stack **lst, t_stack *ne);
+void				lstadd_front(t_stack **lst, t_stack *ne);
 void				lstclear(t_stack **lst);
 t_stack				*lstlast(t_stack *lst);
 t_stack				*lstnew(int value, t_stack *stack);

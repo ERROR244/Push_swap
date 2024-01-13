@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions1.c                                       :+:      :+:    :+:   */
+/*   functions02.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: error01 <error01@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 11:08:02 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/12 21:07:51 by error01          ###   ########.fr       */
+/*   Updated: 2024/01/13 09:27:08 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	size(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -37,9 +37,9 @@ bool	is_nsorted(t_stack *a)
 
 void	stack_init(t_stack **a, long *values, int l)
 {
-	int i;
-	t_stack *curr;
-	t_stack *node;
+	int		i;
+	t_stack	*curr;
+	t_stack	*node;
 
 	i = 1;
 	*a = lstnew((int)values[0], *a);
@@ -52,10 +52,12 @@ void	stack_init(t_stack **a, long *values, int l)
 	}
 }
 
-t_stack *bigest_node(t_stack *a)
+t_stack	*bigest_node(t_stack *a)
 {
-	t_stack *res;
-	long big = LONG_MIN;
+	t_stack	*res;
+	long	big;
+
+	big = LONG_MIN;
 	while (a)
 	{
 		if (a->value > big)
@@ -70,7 +72,7 @@ t_stack *bigest_node(t_stack *a)
 
 void	sort_three(t_stack **a)
 {
-	t_stack *big;
+	t_stack	*big;
 
 	big = bigest_node(*a);
 	if (*a == big)

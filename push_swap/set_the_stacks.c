@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:34:46 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/10 15:13:45 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/13 09:26:46 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	set_price(t_stack *a, t_stack *b)
 	int	len_b;
 
 	if (!a || !b)
-		return;
+		return ;
 	len_a = lstsize(a);
 	len_b = lstsize(b);
 	while (b)
