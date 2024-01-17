@@ -6,7 +6,7 @@
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 11:10:11 by ksohail-          #+#    #+#              #
-#    Updated: 2024/01/13 13:10:11 by ksohail-         ###   ########.fr        #
+#    Updated: 2024/01/15 14:25:50 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCM	=	main.c ../push_swap/split.c ../push_swap/Libft/ft_strjoin.c ../push_swap/
 OBJM	= ${SRCM:.c=.o}
 
 CC		= cc
-CFLAGS	= -Wall -Werror -Wextra #-fsanitize=address
+CFLAGS	= -Wall -Werror -Wextra -fsanitize=address -g -O2
 
 LIBFT 	= ../push_swap/Libft/libft.a
 FT_PRINTF	=	../push_swap/ft_printf/libftprintf.a
