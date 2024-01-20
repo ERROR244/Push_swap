@@ -6,7 +6,7 @@
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 11:49:39 by ksohail-          #+#    #+#              #
-#    Updated: 2024/01/03 09:32:32 by ksohail-         ###   ########.fr        #
+#    Updated: 2024/01/19 17:32:56 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,4 +35,5 @@ fclean : clean
 
 re : fclean all
 
+.SECONDARY : ${OSRC}
 .PHONY: all clean fclean re bonus

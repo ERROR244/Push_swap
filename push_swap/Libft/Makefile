@@ -6,7 +6,7 @@
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 14:29:42 by ksohail-          #+#    #+#              #
-#    Updated: 2023/11/17 13:02:19 by ksohail-         ###   ########.fr        #
+#    Updated: 2024/01/19 17:32:32 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,4 +85,5 @@ fclean: clean
 
 re: fclean all
 
+.SECONDARY : $(OBJS)
 .PHONY: all clean fclean re bonus

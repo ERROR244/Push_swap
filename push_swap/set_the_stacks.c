@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:34:46 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/17 15:52:43 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:06:23 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,50 +16,21 @@ void	set_the_position(t_stack *stack)
 {
 	int	midline;
 	int	i;
-	int the_3_4_line;
+	int	the_3_4_line;
 	int	the_1_4_line;
-	int how_far;
+	int	how_far;
 
 	i = 0;
 	if (!stack)
-		return;
+		return ;
 	midline = lstsize(stack) / 2;
-	the_3_4_line = midline + (midline / 2);
-	the_1_4_line = midline - (midline / 2);
-	stack->how_far_from_the_midline = midline;
-	stack->the_3_4_line = 0;
-	stack->the_1_4_line = 0;
 	while (stack)
 	{
 		stack->index_position = i;
 		if (i <= midline)
-		{
-			stack->the_3_4_line = false;
 			stack->above_the_midline = true;
-			if (stack->prev != NULL)
-			{
-				how_far = stack->prev->how_far_from_the_midline - 1;
-				stack->how_far_from_the_midline = how_far;
-				if (i >= the_1_4_line && i < midline)
-					stack->the_1_4_line = true;
-				if (i >= midline)
-					stack->the_1_4_line = false;
-			}
-		}
 		else
-		{
-			stack->the_1_4_line = false;
 			stack->above_the_midline = false;
-			if (stack->prev != NULL)
-			{
-				how_far = stack->prev->how_far_from_the_midline + 1;
-				stack->how_far_from_the_midline = how_far;
-				if (i <= the_3_4_line)
-					stack->the_3_4_line = true;
-				if (i > the_3_4_line)
-					stack->the_3_4_line = false;
-			}
-		}
 		stack = stack->next;
 		++i;
 	}
@@ -104,7 +75,7 @@ void	set_price(t_stack *a, t_stack *b)
 	while (b)
 	{
 		b->push_price = b->index_position;
-		if (!(b->above_the_midline))
+		if (!b->above_the_midline)
 			b->push_price = len_b - (b->index_position);
 		if (b->target_node->above_the_midline)
 			b->push_price += b->target_node->index_position;
@@ -139,13 +110,6 @@ void	set_the_stacks(t_stack *a, t_stack *b)
 	set_the_position(a);
 	set_the_position(b);
 	set_target_node(a, b);
-	set_price(a, b); 
+	set_price(a, b);
 	set_cheapest(b);
-	// t_stack *curr = a;
-	// while (curr)
-	// {
-	// 	printf("value->%d-above_the_midline->%d-above_the_1_4_line->%d-above_the_3_4_line->%d\n", 
-	// 			curr->value, curr->above_the_midline, curr->the_1_4_line, curr->the_3_4_line);
-	// 	curr = curr->next;
-	// }
 }

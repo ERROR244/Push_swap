@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:10:49 by error01           #+#    #+#             */
-/*   Updated: 2024/01/17 15:53:11 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:54:13 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,29 +67,6 @@ void	sort_all(t_stack **a, t_stack **b, int size)
 void	stack(t_stack **a, t_stack **b, t_struct var)
 {
 	stack_init(a, var.values, var.l);
-	// set_the_position(*a);
-	// t_stack *curr = *a;
-	// while (curr)
-	// {
-	// 	printf("value->%d-above_the_midline->%d-how_far_from_the_midline->%d-the_1_4_line->%d-the_3_4_line->%d-\n", 
-	// 			curr->value, curr->above_the_midline, curr->how_far_from_the_midline, curr->the_1_4_line , curr->the_3_4_line);
-	// 	curr = curr->next;
-	// }
-
-	// printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	
-	// int len_a = lstsize(*a);
-	// while (len_a-- > 3)
-	// 	pb(a, b, false);
-	// set_the_position(*b);
-	// t_stack *currr = *b;
-	// while (currr)
-	// {
-	// 	printf("value->%d-above_the_midline->%d-how_far_from_the_midline->%d-the_1_4_line->%d-the_3_4_line->%d-\n", 
-	// 			currr->value, currr->above_the_midline, currr->how_far_from_the_midline,
-	// 			currr->the_1_4_line , currr->the_3_4_line);
-	// 	currr = currr->next;
-	// }
 	if (!is_nsorted(*a))
 	{
 		if (var.l == 2)

@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/17 15:20:11 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:56:48 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,5 @@ void				sort_all(t_stack **a, t_stack **b, int size);
 void				stack(t_stack **a, t_stack **b, t_struct var);
 void				finish_rotation(t_stack **stack, t_stack *top_node,
 						char stack_name);
-void				make_a_up(t_stack **a, t_stack *cheapestT,
-						t_stack *cheapest, int size);
 
 #endif
