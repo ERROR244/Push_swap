@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:36:36 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/19 16:58:15 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:43:54 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	revers_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest,
 
 void	finish_rotation(t_stack **stack, t_stack *top_node, char stack_name)
 {
+	if (!top_node)
+		return;
 	while (*stack != top_node)
 	{
 		if (stack_name == 'a')

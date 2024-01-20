@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/19 16:56:48 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:05:58 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_struct
 	char			*ptr;
 	long			*values;
 	bool			splited;
+	int				rang_push;
 }					t_struct;
 
 typedef struct s_stack
@@ -36,16 +37,16 @@ typedef struct s_stack
 	int				value;
 	bool			above_the_midline;
 	int				how_far_from_the_midline;
-	bool			the_3_4_line;
-	bool			the_1_4_line;
 	bool			cheapest;
 	int				index_position;
+	int				index;
 	int				push_price;
 	struct s_stack	*target_node;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;
 
+void				set_the_position_index(t_stack *stack);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_split(char const *s, char c);
 long				ft_atol(const char *nptr);
@@ -85,7 +86,7 @@ void				set_the_stacks(t_stack *a, t_stack *b);
 void				set_the_position(t_stack *stack);
 void				move_nodes(t_stack **a, t_stack **b, int size);
 long				*error_handel(char **argv);
-void				sort_all(t_stack **a, t_stack **b, int size);
+void				sort_all(t_stack **a, t_stack **b, t_struct *var);
 void				stack(t_stack **a, t_stack **b, t_struct var);
 void				finish_rotation(t_stack **stack, t_stack *top_node,
 						char stack_name);
