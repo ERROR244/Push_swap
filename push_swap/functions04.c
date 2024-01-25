@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:10:49 by error01           #+#    #+#             */
-/*   Updated: 2024/01/20 18:02:25 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:58:43 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,7 @@ long	*error_handel(char **argv)
 	return (values);
 }
 
-// void	sort_all(t_stack **a, t_stack **b, int size)
-// {
-// 	t_stack	*smallest;
-// 	int		len_a;
-
-// 	len_a = lstsize(*a);
-// 	while (len_a-- > 3)
-// 		pb(a, b, false);
-// 	sort_three(a);
-// 	while (*b)
-// 	{
-// 		set_the_stacks(*a, *b);
-// 		move_nodes(a, b, size);
-// 	}
-// 	set_the_position(*a);
-// 	smallest = smallest_node(*a);
-// 	if (smallest->above_the_midline)
-// 		while (*a != smallest)
-// 			ra(a, false);
-// 	else
-// 		while (*a != smallest)
-// 			rra(a, false);
-// }
-
-t_stack *return_node(t_stack *stack, int index)
+t_stack	*return_node(t_stack *stack, int index)
 {
 	while (stack)
 	{
@@ -77,83 +53,92 @@ t_stack *return_node(t_stack *stack, int index)
 
 int	function(t_stack **a, t_stack **b, int size_push, int last_size)
 {
-	t_stack *curr;
-	int mid = (size_push - last_size) / 2;
-	mid = size_push + mid;
-	int size;
-	
-	size = lstsize(*a);
-	while (last_size < size_push && size > 3)
-	{
-		set_the_position(*a);
-		curr = return_node(*a, last_size);
-		finish_rotation(a, curr, 'a');
-		if ((*a)->index < mid || last_size == 0)
-			pb(a, b, false);
-		else
-		{
-			pb(a, b, false);
-			rb(b, false);
-		}
-		last_size++;
-		size--;
-	}
-	return (last_size);
-}
+	t_stack	*curr;
+	int		mid;
 
-void	sort_all(t_stack **a, t_stack **b, t_struct *var)
-{
-	int size_push;
-	int last_size;
-
-	last_size = 0;
-	size_push = 0;
-	set_the_position_index(*a);
-	
-	// printf("last_size->%d-\n", last_size);
-	while (lstsize(*a) > 3)
-	{
-		size_push += ((lstsize(*a) - 3) / 4) + 1;
-		// printf("size_push->%d-\n", size_push);
-		// printf("last_size->%d-\n", last_size);
-		last_size = function(a, b, size_push, last_size);
-		// size_push += last_size;
-	}
-	// printf("HERE\n");
-	// printf("\n\n!!!\n\n");
-	sort_three(a);
-	// t_stack *last = lstlast(*a);
-	// last->index = -1;
-	// while (*b)
-	// {
-	// 	t_stack *stack = bigest_node(*b);
-	// 	finish_rotation(b, stack, 'b');
-	// 	pa(b, a, false);
-	// }
-	// while (*b)
-	// {
-	// 	pa(b, a, false);
-	// }
-	
-	
-	
-	// printf("\n\n!!!\n\n");
-	
-	
-	
-	
-	t_stack *curr = *a;
+	mid = ((size_push - last_size) / 2) + last_size;
+	curr = *a;
 	while (curr)
 	{
-		printf("value->%d-index->%d-\n", curr->value, curr->index);
-		curr = curr->next;
+		if ((curr)->index < size_push)
+		{
+			set_the_position(*a);
+			finish_rotation(a, curr, 'a');
+			pb(a, b, false);
+			if ((*b)->index < mid)
+				rb(b, false);
+			curr = *a;
+		}
+		else
+			curr = (curr)->next;
 	}
-	printf("\n\n!!!\n\n");
-	t_stack *currr = *b;
-	while (currr)
+	return (size_push);
+}
+
+t_stack	*is_it_in(t_stack *b, int index)
+{
+	while (b)
 	{
-		printf("value->%d-index->%d-\n", currr->value, currr->index);
-		currr = currr->next;
+		if (b->index == index)
+			return (b);
+		b = b->next;
+	}
+	return (NULL);
+}
+
+void	b_to_a(t_stack **a, t_stack **b)
+{
+	t_stack	*last;
+	t_stack	*top_node;
+
+	while (*b)
+	{
+		last = lstlast(*a);
+		top_node = is_it_in(*b, (*a)->index - 1);
+		if ((*b)->index == (*a)->index - 1)
+			pa(b, a, false);
+		else if ((*b)->index > last->index)
+		{
+			pa(b, a, false);
+			ra(a, false);
+		}
+		else if (top_node)
+		{
+			set_the_position(*b);
+			finish_rotation(b, top_node, 'b');
+			pa(b, a, false);
+		}
+		else
+			rra(a, false);
+	}
+}
+
+void	sort_all(t_stack **a, t_stack **b)
+{
+	t_sort sort;
+
+	sort.size = 0;
+	sort.last_size = 0;
+	sort.size_push = 0;
+	set_the_position_index(*a);
+	while (lstsize(*a) > 3)
+	{
+		sort.size = lstsize(*a);
+		if (sort.size > 200)
+			sort.size_push += ((lstsize(*a) - 3) / 5) + 1;
+		else
+			sort.size_push += ((lstsize(*a) - 3) / 3) + 1;
+		sort.last_size = function(a, b, sort.size_push, sort.last_size);
+	}
+	sort_three(a);
+	sort.last = lstlast(*a);
+	sort.last->index = -1;
+	b_to_a(a, b);
+	sort.last = lstlast(*a);
+	while (sort.last->index != -1)
+	{
+		rra(a, false);
+		sort.last = lstlast(*a);
 	}
 }
 
@@ -167,7 +152,7 @@ void	stack(t_stack **a, t_stack **b, t_struct var)
 		else if (var.l == 3)
 			sort_three(a);
 		else if (var.l > 3)
-			sort_all(a, b, &var);
+			sort_all(a, b);
 	}
 	lstclear(a);
 	lstclear(b);
