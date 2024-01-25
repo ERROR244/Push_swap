@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 10:32:04 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:50:41 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:59:36 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	error(char **av)
 		if (av[i][0] == '\0' || !there_is_num(av))
 		{
 			ft_printf("Error\n");
-			exit(EXIT_FAILURE);
+			exit(EXIT_SUCCESS);
 		}
 		i++;
 	}
@@ -83,7 +83,7 @@ int	main(int ac, char **av)
 	t_struct	var;
 
 	if (ac == 1 || (ac == 2 && !av[0]))
-		return (1);
+		return (0);
 	error(av);
 	b = NULL;
 	a = NULL;

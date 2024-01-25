@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:15:16 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:30:05 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:00:02 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	duplicates(long value, long *values, int k, int l)
 		if (value == values[i] && i != k)
 		{
 			ft_printf("Error\n		duplicates\n");
-			ft_printf("%ld- \n", values[i]);
 			return (0);
 		}
 		i++;
@@ -72,8 +71,6 @@ int	errors1(long *values, int l)
 		{
 			ft_printf("Error\n		some arguments are ");
 			ft_printf("bigger/less than an integer\n");
-			ft_printf("%ld- \n", values[i]);
-			free(values);
 			return (0);
 		}
 		if (duplicates(values[i], values, i, l) == 0)
