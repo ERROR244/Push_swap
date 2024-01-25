@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   print_i_d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 11:39:24 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:00:24 by ksohail-         ###   ########.fr       */
+/*   Created: 2023/11/15 13:09:03 by ksohail-          #+#    #+#             */
+/*   Updated: 2023/11/23 12:08:14 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int	print_i_d(long long n)
+{
+	char		*str;
+	int			len;
 
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *s);
-char	*ft_itoa(int n);
-
-#endif
+	len = 0;
+	str = ft_itoa(n);
+	if (str == NULL)
+		return (-1);
+	len += print_str(str);
+	free(str);
+	return (len);
+}

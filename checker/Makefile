@@ -6,7 +6,7 @@
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 11:10:11 by ksohail-          #+#    #+#              #
-#    Updated: 2024/01/15 14:25:50 by ksohail-         ###   ########.fr        #
+#    Updated: 2024/01/25 15:36:08 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,38 +14,36 @@
 
 NAME	= checker
 
-SRCM	=	main.c ../push_swap/split.c ../push_swap/Libft/ft_strjoin.c ../push_swap/Libft/ft_strdup.c\
-			../push_swap/Libft/ft_strlen.c ../push_swap/functions01.c ../push_swap/lstclear.c stack.c\
-			../push_swap/lstnew.c ../push_swap/lstlast.c Get-Next-Line/get_next_line.c\
-			Get-Next-Line/get_next_line_utils.c ../push_swap/rotate.c ../push_swap/swap.c\
-			../push_swap/reverse_rotate.c ../push_swap/push.c ../push_swap/lstsize.c ../push_swap/functions02.c
+SRCM	=	 main.c split.c ./Libft/ft_strjoin.c ./Libft/ft_strdup.c\
+			./Libft/ft_strlen.c functions01.c lstclear.c stack.c\
+			lstlast.c lstnew.c ./Get-Next-Line/get_next_line.c\
+			./Get-Next-Line/get_next_line_utils.c rotate.c swap.c\
+			reverse_rotate.c push.c lstsize.c functions02.c\
+			ft_printf/ft_printf.c ft_printf/print_ch.c ft_printf/print_i_d.c\
+			ft_printf/print_p.c ft_printf/print_str.c ft_printf/print_u.c ft_printf/print_x.c
 
 OBJM	= ${SRCM:.c=.o}
 
 CC		= cc
 CFLAGS	= -Wall -Werror -Wextra -fsanitize=address -g -O2
 
-LIBFT 	= ../push_swap/Libft/libft.a
-FT_PRINTF	=	../push_swap/ft_printf/libftprintf.a
+LIBFT 	= ./Libft/libft.a
 
 all:		${NAME}
 
 ${LIBFT}:
-	make -C ../push_swap/Libft
+	make -C ./Libft
 
-${FT_PRINTF}:
-	make -C ../push_swap/ft_printf
-
-${NAME}:	${LIBFT} ${FT_PRINTF} ${OBJM}
-	${CC} ${CFLAGS} ${LIBFT} ${FT_PRINTF} ${OBJM} -o ${NAME}
+${NAME}:	${LIBFT} ${OBJM}
+	${CC} ${CFLAGS} ${LIBFT} ${OBJM} -o ${NAME}
 	
 clean:
 	rm -f ${OBJM}
-	make clean -C ../push_swap
+	make clean -C Libft
 
 fclean:		clean
 	rm -f ${NAME}
-	make fclean -C ../push_swap
+	make fclean -C Libft
 
 re:			fclean all
 

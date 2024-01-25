@@ -1,53 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   print_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 09:40:31 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:02:07 by ksohail-         ###   ########.fr       */
+/*   Created: 2023/11/15 13:20:34 by ksohail-          #+#    #+#             */
+/*   Updated: 2023/11/23 12:08:29 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static char	*fill(char *ptr, long n, int x)
+static char	*fill(char *ptr, unsigned int n, int x)
 {
-	int	i;
-
-	i = n;
-	if (n < 0)
-		n *= -1;
 	if (x >= 0)
 	{
 		ptr[x] = (n % 10) + '0';
 		n /= 10;
 		fill(ptr, n, --x);
 	}
-	if (i < 0)
-		ptr[0] = '-';
 	return (ptr);
 }
 
-static void	nor_line(int *n, int *x)
+static char	*ft_itoa_u(unsigned int n)
 {
-	if (*n < 0)
-	{
-		*x += 1;
-		*n *= -1;
-	}
-}
-
-char	*ft_itoa(int n)
-{
-	char	*ptr;
-	long	i;
-	int		x;
+	char			*ptr;
+	unsigned int	i;
+	int				x;
 
 	x = 0;
 	i = n;
-	nor_line(&n, &x);
 	n /= 10;
 	x++;
 	while (n != 0)
@@ -61,4 +44,18 @@ char	*ft_itoa(int n)
 	ptr[x] = '\0';
 	x--;
 	return (fill(ptr, i, x));
+}
+
+int	print_u(unsigned int n)
+{
+	char	*str;
+	int		len;
+
+	len = 0;
+	str = ft_itoa_u(n);
+	if (str == NULL)
+		return (-1);
+	len += print_str(str);
+	free(str);
+	return (len);
 }

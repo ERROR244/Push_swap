@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 11:39:24 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:00:24 by ksohail-         ###   ########.fr       */
+/*   Created: 2023/11/15 11:32:37 by ksohail-          #+#    #+#             */
+/*   Updated: 2023/11/20 08:48:04 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int	print_str(char *str)
+{
+	int	i;
+	int	k;
 
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *s);
-char	*ft_itoa(int n);
-
-#endif
+	k = 0;
+	i = 0;
+	if (str == NULL)
+		return (write(1, "(null)", 6));
+	while (*str)
+	{
+		k = print_ch(*str);
+		if (k < 0)
+			return (k);
+		i++;
+		str++;
+	}
+	return (i);
+}

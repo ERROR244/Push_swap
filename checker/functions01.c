@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:15:16 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/13 12:34:10 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:30:05 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,34 @@ int	errors1(long *values, int l)
 		}
 		if (duplicates(values[i], values, i, l) == 0)
 			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	errors0(char **argv)
+{
+	int	i;
+	int	k;
+
+	i = 0;
+	while (argv[i])
+	{
+		k = 0;
+		while (argv[i][k])
+		{
+			if ((!(argv[i][k] <= '9' && argv[i][k] >= '0') && argv[i][k] != '-'
+					&& argv[i][k] != '+') || ((argv[i][k] == '-'
+						|| argv[i][k] == '+') && (argv[i][k + 1] == '-'
+						|| argv[i][k + 1] == '+')) || ((argv[i][k] == '-'
+						|| argv[i][k] == '+') && k != 0) || ((argv[i][k] == '-'
+						|| argv[i][k] == '+') && argv[i][k + 1] == '\0'))
+			{
+				error_msg1();
+				return (0);
+			}
+			k++;
+		}
 		i++;
 	}
 	return (1);

@@ -6,11 +6,11 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:38:23 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 14:43:46 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:18:52 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	rotate(t_stack **a)
 {
@@ -29,18 +29,15 @@ void	rotate(t_stack **a)
 void	ra(t_stack **a)
 {
 	rotate(a);
-	printf("ra\n");
 }
 
 void	rb(t_stack **b)
 {
 	rotate(b);
-	printf("rb\n");
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
-	printf("rr\n");
 }

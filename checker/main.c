@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 10:32:04 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/13 13:09:06 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:50:41 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,26 @@ long	*error_handel(char **argv)
 	return (values);
 }
 
+int	there_is_num(char **av)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (av[x])
+	{
+		y = 0;
+		while (av[y])
+		{
+			if (av[x][y] >= '0' && av[x][y] <= '9')
+				return (1);
+			y++;
+		}
+		x++;
+	}
+	return (0);
+}
+
 void	error(char **av)
 {
 	int	i;
@@ -47,7 +67,7 @@ void	error(char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (av[i][0] == '\0')
+		if (av[i][0] == '\0' || !there_is_num(av))
 		{
 			ft_printf("Error\n");
 			exit(EXIT_FAILURE);

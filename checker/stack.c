@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:25:45 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/13 13:06:49 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:21:47 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,27 @@ int	error_exit(void)
 int	command(char *cmd, t_stack **a, t_stack **b, int flag)
 {
 	if (!ft_strcmp(cmd, "sa\n"))
-		sa(a, true);
+		sa(a);
 	else if (!ft_strcmp(cmd, "sb\n"))
-		sb(b, true);
+		sb(b);
 	else if (!ft_strcmp(cmd, "ss\n"))
-		ss(a, b, true);
+		ss(a, b);
 	else if (!ft_strcmp(cmd, "pa\n"))
-		pa(b, a, true);
+		pa(b, a);
 	else if (!ft_strcmp(cmd, "pb\n"))
-		pb(a, b, true);
+		pb(a, b);
 	else if (!ft_strcmp(cmd, "ra\n"))
-		ra(a, true);
+		ra(a);
 	else if (!ft_strcmp(cmd, "rb\n"))
-		rb(b, true);
+		rb(b);
 	else if (!ft_strcmp(cmd, "rr\n"))
-		rr(a, b, true);
+		rr(a, b);
 	else if (!ft_strcmp(cmd, "rra\n"))
-		rra(a, true);
+		rra(a);
 	else if (!ft_strcmp(cmd, "rrb\n"))
-		rrb(b, true);
+		rrb(b);
 	else if (!ft_strcmp(cmd, "rrr\n"))
-		rrr(a, b, true);
+		rrr(a, b);
 	else
 		flag = error_exit();
 	return (flag);
@@ -77,9 +77,9 @@ void	stack(t_stack **a, t_stack **b, t_struct var)
 	if (flag == 0)
 	{
 		if (is_nsorted(*a) && lstsize(*a) == size)
-			ft_printf("OK\n");
+			write(!1, "OK\n", 3);
 		else
-			ft_printf("KO\n");
+			write(!1, "KO\n", 3);
 	}
 	lstclear(a);
 	lstclear(b);

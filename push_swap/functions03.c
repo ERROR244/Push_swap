@@ -6,31 +6,11 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:12:41 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 13:46:16 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:46:35 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*smallest_node(t_stack *stack)
-{
-	t_stack	*smallest_node;
-	long	smallest;
-
-	if (NULL == stack)
-		return (NULL);
-	smallest = LONG_MAX;
-	while (stack)
-	{
-		if (stack->value < smallest)
-		{
-			smallest = stack->value;
-			smallest_node = stack;
-		}
-		stack = stack->next;
-	}
-	return (smallest_node);
-}
 
 long	*error_handel(char **argv)
 {
@@ -84,9 +64,9 @@ int	function(t_stack **a, t_stack **b, int size_push, int last_size)
 		{
 			set_the_position(*a);
 			finish_rotation(a, curr, 'a');
-			pb(a, b, false);
+			pb(a, b);
 			if ((*b)->index < mid)
-				rb(b, false);
+				rb(b);
 			curr = *a;
 		}
 		else

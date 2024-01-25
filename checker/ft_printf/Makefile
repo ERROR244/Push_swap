@@ -5,38 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/01 14:29:42 by ksohail-          #+#    #+#              #
-#    Updated: 2024/01/25 15:00:56 by ksohail-         ###   ########.fr        #
+#    Created: 2023/11/18 11:49:39 by ksohail-          #+#    #+#              #
+#    Updated: 2024/01/19 17:32:56 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =  ft_strjoin.c\
-		ft_strdup.c\
-		ft_strlen.c\
-		ft_itoa.c
+NAME = libftprintf.a
 
 CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = libft.a
-OBJS = $(SRCS:.c=.o)
+SRC = ft_printf.c print_ch.c print_i_d.c print_p.c print_str.c print_u.c print_x.c
 
-all: $(NAME)
+OSRC = ${SRC:.c=.o};
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+all : ${NAME}
 
-%.o:	%.c
-	$(CC) $(CFLAGS) -c $^ -o $@
+${NAME} : ${OSRC}
+	ar rcs ${NAME} ${OSRC}
 
-clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+%.o : %.c
+	${CC} ${CFLAGS} -c $^ -o $@
 
-fclean: clean
-	rm -f $(NAME)
+clean :
+	rm -f ${OSRC}
 
-re: fclean all
+fclean : clean
+	rm -f ${NAME}
 
-.SECONDARY : $(OBJS)
+re : fclean all
+
+.SECONDARY : ${OSRC}
 .PHONY: all clean fclean re bonus

@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:51:19 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/13 09:25:33 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:44:09 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,21 @@ void	reverse_rotate(t_stack **a)
 	}
 }
 
-void	rra(t_stack **a, bool print)
+void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	if (!print)
-		printf("rra\n");
+	printf("rra\n");
 }
 
-void	rrb(t_stack **b, bool print)
+void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	if (!print)
-		printf("rrb\n");
+	printf("rrb\n");
 }
 
-void	rrr(t_stack **a, t_stack **b, bool print)
+void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	if (!print)
-		printf("rrr\n");
+	printf("rrr\n");
 }

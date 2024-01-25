@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:10:49 by error01           #+#    #+#             */
-/*   Updated: 2024/01/25 13:46:07 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:52:51 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ void	b_to_a(t_stack **a, t_stack **b)
 		last = lstlast(*a);
 		top_node = is_it_in(*b, (*a)->index - 1);
 		if ((*b)->index == (*a)->index - 1)
-			pa(b, a, false);
+			pa(b, a);
 		else if ((*b)->index > last->index)
 		{
-			pa(b, a, false);
-			ra(a, false);
+			pa(b, a);
+			ra(a);
 		}
 		else if (top_node)
 		{
 			set_the_position(*b);
 			finish_rotation(b, top_node, 'b');
-			pa(b, a, false);
+			pa(b, a);
 		}
 		else
-			rra(a, false);
+			rra(a);
 	}
 }
 
@@ -63,7 +63,7 @@ void	sort_all(t_stack **a, t_stack **b)
 	sort.last = lstlast(*a);
 	while (sort.last->index != -1)
 	{
-		rra(a, false);
+		rra(a);
 		sort.last = lstlast(*a);
 	}
 }
@@ -74,7 +74,7 @@ void	stack(t_stack **a, t_stack **b, t_struct var)
 	if (!is_nsorted(*a))
 	{
 		if (var.l == 2)
-			sa(a, false);
+			sa(a);
 		else if (var.l == 3)
 			sort_three(a);
 		else if (var.l > 3)

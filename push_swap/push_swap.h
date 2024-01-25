@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/25 13:14:39 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:46:47 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,24 @@ t_stack				*lstlast(t_stack *lst);
 t_stack				*lstnew(int value, t_stack *stack);
 int					lstsize(t_stack *lst);
 void				rotate(t_stack **a);
-void				rr(t_stack **a, t_stack **b, bool print);
-void				ra(t_stack **a, bool print);
-void				rb(t_stack **b, bool print);
+void				rr(t_stack **a, t_stack **b);
+void				ra(t_stack **a);
+void				rb(t_stack **b);
 void				swap(t_stack **a);
-void				sa(t_stack **a, bool print);
-void				sb(t_stack **b, bool print);
-void				ss(t_stack **a, t_stack **b, bool print);
+void				sa(t_stack **a);
+void				sb(t_stack **b);
+void				ss(t_stack **a, t_stack **b);
 void				reverse_rotate(t_stack **a);
-void				rra(t_stack **a, bool print);
-void				rrb(t_stack **b, bool print);
-void				rrr(t_stack **a, t_stack **b, bool print);
+void				rra(t_stack **a);
+void				rrb(t_stack **b);
+void				rrr(t_stack **a, t_stack **b);
 bool				is_nsorted(t_stack *a);
 void				stack_init(t_stack **a, long *values, int l);
 t_stack				*bigest_node(t_stack *a);
 void				sort_three(t_stack **a);
 int					size(char **str);
-void				pa(t_stack **b, t_stack **a, bool print);
-void				pb(t_stack **a, t_stack **b, bool print);
-t_stack				*smallest_node(t_stack *stack);
+void				pa(t_stack **b, t_stack **a);
+void				pb(t_stack **a, t_stack **b);
 void				set_the_position(t_stack *stack);
 long				*error_handel(char **argv);
 void				sort_all(t_stack **a, t_stack **b);

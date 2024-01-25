@@ -3,7 +3,9 @@ NAME	= push_swap
 SRCM	=	functions01.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
 			lstsize.c rotate.c swap.c reverse_rotate.c functions02.c push.c functions03.c\
 			Libft/ft_strdup.c Libft/ft_strjoin.c Libft/ft_strlen.c\
-			functions04.c lstclear.c split.c finish_rotation.c
+			functions04.c lstclear.c split.c finish_rotation.c Libft/ft_itoa.c\
+			ft_printf/ft_printf.c ft_printf/print_ch.c ft_printf/print_i_d.c\
+			ft_printf/print_p.c ft_printf/print_str.c ft_printf/print_u.c ft_printf/print_x.c
 
 OBJM	= ${SRCM:.c=.o}
 

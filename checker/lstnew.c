@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   lstnew.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 11:39:24 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:00:24 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:09:54 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/25 15:12:51 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "checker.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+t_stack	*lstnew(int value, t_stack *stack)
+{
+	t_stack	*n_node;
+	t_stack	*last_node;
 
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *s);
-char	*ft_itoa(int n);
-
-#endif
+	n_node = (t_stack *)malloc(sizeof(struct s_stack));
+	if (n_node == NULL)
+		return (NULL);
+	n_node->value = value;
+	n_node->next = NULL;
+	if (stack == NULL)
+	{
+		n_node->prev = NULL;
+	}
+	else
+	{
+		last_node = lstlast(stack);
+		n_node->prev = last_node;
+	}
+	return (n_node);
+}

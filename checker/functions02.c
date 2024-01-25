@@ -6,11 +6,11 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 11:08:02 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 14:44:55 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:49:37 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	size(char **str)
 {
@@ -50,35 +50,4 @@ void	stack_init(t_stack **a, long *values, int l)
 		curr->next = node;
 		i++;
 	}
-}
-
-t_stack	*bigest_node(t_stack *a)
-{
-	t_stack	*res;
-	long	big;
-
-	big = LONG_MIN;
-	while (a)
-	{
-		if (a->value > big)
-		{
-			res = a;
-			big = a->value;
-		}
-		a = a->next;
-	}
-	return (res);
-}
-
-void	sort_three(t_stack **a)
-{
-	t_stack	*big;
-
-	big = bigest_node(*a);
-	if (*a == big)
-		ra(a);
-	else if ((*a)->next == big)
-		rra(a);
-	if ((*a)->next->value < (*a)->value)
-		sa(a);
 }

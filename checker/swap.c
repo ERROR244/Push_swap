@@ -6,11 +6,11 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 12:31:43 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 14:42:42 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:19:31 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	swap(t_stack **a)
 {
@@ -41,7 +41,6 @@ void	sa(t_stack **a)
 	if (lstsize(*a) < 2)
 		return ;
 	swap(a);
-	printf("sa\n");
 }
 
 void	sb(t_stack **b)
@@ -49,7 +48,6 @@ void	sb(t_stack **b)
 	if (lstsize(*b) < 2)
 		return ;
 	swap(b);
-	printf("sb\n");
 }
 
 void	ss(t_stack **a, t_stack **b)
@@ -58,5 +56,4 @@ void	ss(t_stack **a, t_stack **b)
 		return ;
 	swap(a);
 	swap(b);
-	printf("ss\n");
 }
