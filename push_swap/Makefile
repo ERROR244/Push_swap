@@ -2,13 +2,13 @@ NAME	= push_swap
 
 SRCM	=	functions01.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
 			lstsize.c rotate.c swap.c reverse_rotate.c functions02.c push.c functions03.c\
-			set_the_stacks.c move_nodes.c Libft/ft_strdup.c Libft/ft_strjoin.c Libft/ft_strlen.c\
-			functions04.c lstclear.c split.c
+			Libft/ft_strdup.c Libft/ft_strjoin.c Libft/ft_strlen.c\
+			functions04.c lstclear.c split.c finish_rotation.c
 
 OBJM	= ${SRCM:.c=.o}
 
-CC		= cc# -fsanitize=address -g -O2
-# CFLAGS	= -Wall -Werror -Wextra
+CC		= cc -fsanitize=address -g -O2
+CFLAGS	= -Wall -Werror -Wextra
 
 LIBFT 	= Libft/libft.a
 FT_PRINTF	=	ft_printf/libftprintf.a
@@ -22,7 +22,7 @@ ${FT_PRINTF}:
 	make -C ft_printf
 
 ${NAME}:	${LIBFT} ${FT_PRINTF} ${OBJM}
-	${CC} ${LIBFT} ${FT_PRINTF} ${OBJM} -o ${NAME}
+	${CC} ${CFLAGS} ${LIBFT} ${FT_PRINTF} ${OBJM} -o ${NAME}
 	
 clean:
 	rm -f ${OBJM}

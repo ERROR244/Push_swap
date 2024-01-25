@@ -6,11 +6,31 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:48:58 by error01           #+#    #+#             */
-/*   Updated: 2024/01/15 22:03:33 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:46:23 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	there_is_num(char **av)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (av[x])
+	{
+		y = 0;
+		while (av[y])
+		{
+			if (av[x][y] >= '0' && av[x][y] <= '9')
+				return (1);
+			y++;
+		}
+		x++;
+	}
+	return (0);
+}
 
 void	error(char **av)
 {
@@ -19,7 +39,7 @@ void	error(char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (av[i][0] == '\0')
+		if (av[i][0] == '\0' || !there_is_num(av))
 		{
 			ft_printf("Error\n");
 			exit(EXIT_FAILURE);

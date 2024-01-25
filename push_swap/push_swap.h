@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:49:37 by error01           #+#    #+#             */
-/*   Updated: 2024/01/25 12:59:39 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:14:39 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,17 +86,18 @@ void				stack_init(t_stack **a, long *values, int l);
 t_stack				*bigest_node(t_stack *a);
 void				sort_three(t_stack **a);
 int					size(char **str);
-void				set_cheapest(t_stack *b);
-void				set_price(t_stack *a, t_stack *b);
 void				pa(t_stack **b, t_stack **a, bool print);
 void				pb(t_stack **a, t_stack **b, bool print);
 t_stack				*smallest_node(t_stack *stack);
-void				set_the_stacks(t_stack *a, t_stack *b);
 void				set_the_position(t_stack *stack);
-void				move_nodes(t_stack **a, t_stack **b, int size);
 long				*error_handel(char **argv);
 void				sort_all(t_stack **a, t_stack **b);
 void				stack(t_stack **a, t_stack **b, t_struct var);
+long				*error_handel(char **argv);
+t_stack				*return_node(t_stack *stack, int index);
+t_stack				*is_it_in(t_stack *b, int index);
+int					function(t_stack **a, t_stack **b, int size_push,
+						int last_size);
 void				finish_rotation(t_stack **stack, t_stack *top_node,
 						char stack_name);
 
