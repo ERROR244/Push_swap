@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:25:45 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:21:47 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:57:12 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	error_exit(void)
 	return (1);
 }
 
-int	command(char *cmd, t_stack **a, t_stack **b, int flag)
+int	commands_check(char *cmd, t_stack **a, t_stack **b, int flag)
 {
 	if (!ft_strcmp(cmd, "sa\n"))
 		sa(a);
@@ -54,6 +54,13 @@ int	command(char *cmd, t_stack **a, t_stack **b, int flag)
 		rrr(a, b);
 	else
 		flag = error_exit();
+	return (flag);
+}
+
+int	command(char *cmd, t_stack **a, t_stack **b, int flag)
+{
+	flag = commands_check(cmd, a, b, flag);
+	free(cmd);
 	return (flag);
 }
 

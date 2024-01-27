@@ -9,7 +9,7 @@ SRCM	=	functions01.c main.c lstadd_back.c lstnew.c lstlast.c lstadd_front.c\
 
 OBJM	= ${SRCM:.c=.o}
 
-CC		= cc -fsanitize=address -g -O2
+CC		= cc
 CFLAGS	= -Wall -Werror -Wextra
 
 LIBFT 	= Libft/libft.a

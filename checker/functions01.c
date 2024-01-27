@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:15:16 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 16:00:02 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:03:04 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ long	ft_atol(const char *nptr)
 
 void	error_msg1(void)
 {
-	ft_printf("Error\n 	some arguments aren’t integers\n");
+	ft_printf("Error\n");
 }
 
 int	duplicates(long value, long *values, int k, int l)
@@ -52,7 +52,7 @@ int	duplicates(long value, long *values, int k, int l)
 	{
 		if (value == values[i] && i != k)
 		{
-			ft_printf("Error\n		duplicates\n");
+			ft_printf("Error\n");
 			return (0);
 		}
 		i++;
@@ -69,8 +69,7 @@ int	errors1(long *values, int l)
 	{
 		if (values[i] > INT_MAX || values[i] < INT_MIN)
 		{
-			ft_printf("Error\n		some arguments are ");
-			ft_printf("bigger/less than an integer\n");
+			ft_printf("Error\n");
 			return (0);
 		}
 		if (duplicates(values[i], values, i, l) == 0)

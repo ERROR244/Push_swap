@@ -6,7 +6,7 @@
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 11:10:11 by ksohail-          #+#    #+#              #
-#    Updated: 2024/01/25 15:36:08 by ksohail-         ###   ########.fr        #
+#    Updated: 2024/01/27 15:15:23 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCM	=	 main.c split.c ./Libft/ft_strjoin.c ./Libft/ft_strdup.c\
 OBJM	= ${SRCM:.c=.o}
 
 CC		= cc
-CFLAGS	= -Wall -Werror -Wextra -fsanitize=address -g -O2
+CFLAGS	= -Wall -Werror -Wextra
 
 LIBFT 	= ./Libft/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 09:48:58 by error01           #+#    #+#             */
-/*   Updated: 2024/01/25 16:02:09 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:56:00 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	there_is_num(char **av)
 	while (av[x])
 	{
 		y = 0;
-		while (av[y])
+		while (av[x][y])
 		{
 			if (av[x][y] >= '0' && av[x][y] <= '9')
 				return (1);
