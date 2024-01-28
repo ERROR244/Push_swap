@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 10:32:04 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/27 14:56:14 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:47:07 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 long	*error_handel(char **argv)
 {
@@ -69,7 +69,7 @@ void	error(char **av)
 	{
 		if (av[i][0] == '\0' || !there_is_num(av))
 		{
-			ft_printf("Error\n");
+			write(1, "Error\n", 6);
 			exit(EXIT_SUCCESS);
 		}
 		i++;

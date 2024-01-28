@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   lstadd_back_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 11:35:27 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/03 09:31:41 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:09:26 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/28 10:46:42 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "checker_bonus.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include "../Libft/libft.h"
-# include <unistd.h>
+void	lstadd_back(t_stack **lst, t_stack *new)
+{
+	t_stack	*curr;
 
-int		print_ch(char c);
-int		print_str(char *str);
-int		print_i_d(long long i);
-int		print_u(unsigned int i);
-int		print_x(unsigned int n, char c);
-int		print_p(void *ptr);
-int		ft_printf(const char *str, ...);
-
-#endif
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	curr = lstlast(*lst);
+	curr->next = new;
+}

@@ -6,11 +6,11 @@
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:44:28 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/01 18:44:31 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:39:25 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 int	ft_len(char *str)
 {

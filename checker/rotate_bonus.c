@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 12:51:19 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:19:42 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/05 12:38:23 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/28 10:47:21 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
-void	reverse_rotate(t_stack **a)
+void	rotate(t_stack **a)
 {
 	t_stack	*curr;
 
-	if (*a && (*a)->next)
-	{
-		curr = *a;
-		while (curr->next->next)
-			curr = curr->next;
-		curr->next->next = *a;
-		*a = curr->next;
-		curr->next = NULL;
-	}
+	if (!a || !*a || lstsize(*a) == 1)
+		return ;
+	curr = lstlast(*a);
+	curr->next = *a;
+	*a = (*a)->next;
+	(*a)->prev = NULL;
+	curr->next->next = NULL;
+	curr->next->next = NULL;
 }
 
-void	rra(t_stack **a)
+void	ra(t_stack **a)
 {
-	reverse_rotate(a);
+	rotate(a);
 }
 
-void	rrb(t_stack **b)
+void	rb(t_stack **b)
 {
-	reverse_rotate(b);
+	rotate(b);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-	reverse_rotate(a);
-	reverse_rotate(b);
+	rotate(a);
+	rotate(b);
 }

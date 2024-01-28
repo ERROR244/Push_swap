@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:25:45 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/27 14:57:12 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:47:30 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 static int	ft_strcmp(char *str_1, char *str_2)
 {
@@ -24,7 +24,7 @@ static int	ft_strcmp(char *str_1, char *str_2)
 
 int	error_exit(void)
 {
-	ft_printf("Error\n");
+	write(1, "Error\n", 6);
 	return (1);
 }
 

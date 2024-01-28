@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstnew.c                                           :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:09:54 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:12:51 by ksohail-         ###   ########.fr       */
+/*   Created: 2023/11/25 18:45:12 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/28 10:39:28 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
-t_stack	*lstnew(int value, t_stack *stack)
+char	*get_next_line(int fd)
 {
-	t_stack	*n_node;
-	t_stack	*last_node;
+	static char	buf[BUFFER_SIZE];
+	char		*line;
+	ssize_t		readed;
 
-	n_node = (t_stack *)malloc(sizeof(struct s_stack));
-	if (n_node == NULL)
+	if (BUFFER_SIZE < 1 || fd < 0 || read(fd, 0, 0) == -1
+		|| BUFFER_SIZE > 0x7fffffff)
 		return (NULL);
-	n_node->value = value;
-	n_node->next = NULL;
-	if (stack == NULL)
+	line = NULL;
+	readed = 1;
+	while (readed > 0)
 	{
-		n_node->prev = NULL;
+		if (buf[0] == 0)
+			readed = read(fd, buf, BUFFER_SIZE);
+		if (readed > 0)
+			line = my_line(line, buf);
+		if (is_it_nline(buf))
+			break ;
 	}
-	else
-	{
-		last_node = lstlast(stack);
-		n_node->prev = last_node;
-	}
-	return (n_node);
+	return (line);
 }

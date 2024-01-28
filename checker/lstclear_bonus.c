@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstadd_back.c                                      :+:      :+:    :+:   */
+/*   lstclear_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:09:26 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:12:35 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:09:37 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/28 10:46:50 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
-void	lstadd_back(t_stack **lst, t_stack *new)
+void	lstclear(t_stack **lst)
 {
-	t_stack	*curr;
+	t_stack	*curr1;
+	t_stack	*curr2;
 
-	if (!lst || !new)
+	if (lst == NULL || *lst == NULL)
 		return ;
-	if (*lst == NULL)
+	curr1 = *lst;
+	while (curr1->next != NULL)
 	{
-		*lst = new;
-		return ;
+		curr2 = curr1->next;
+		free(curr1);
+		curr1 = curr2;
 	}
-	curr = lstlast(*lst);
-	curr->next = new;
+	free(curr1);
+	*lst = NULL;
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_ch.c                                         :+:      :+:    :+:   */
+/*   lstlast_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 11:28:39 by ksohail-          #+#    #+#             */
-/*   Updated: 2023/11/19 20:08:46 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:09:47 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/28 10:46:53 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "checker_bonus.h"
 
-int	print_ch(char c)
+t_stack	*lstlast(t_stack *lst)
 {
-	return (write(1, &c, 1));
+	if (lst == NULL)
+		return (lst);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

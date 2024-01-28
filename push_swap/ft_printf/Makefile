@@ -6,7 +6,7 @@
 #    By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 11:49:39 by ksohail-          #+#    #+#              #
-#    Updated: 2024/01/19 17:32:56 by ksohail-         ###   ########.fr        #
+#    Updated: 2024/01/28 10:59:19 by ksohail-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ ${NAME} : ${OSRC}
 	${CC} ${CFLAGS} -c $^ -o $@
 
 clean :
-	rm -f ${OSRC}
+	@rm -f ${OSRC}
 
 fclean : clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re : fclean all
 

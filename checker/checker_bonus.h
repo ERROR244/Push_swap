@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 10:33:23 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:20:54 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:57:07 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-# include "../push_swap/Libft/libft.h"
-# include "../push_swap/ft_printf/ft_printf.h"
-# include "Get-Next-Line/get_next_line.h"
+# include "Libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 # define INPUT 0

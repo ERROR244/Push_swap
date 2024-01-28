@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   lstsize_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 12:38:23 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:18:52 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:10:00 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/28 10:47:03 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
-void	rotate(t_stack **a)
+int	lstsize(t_stack *lst)
 {
 	t_stack	*curr;
+	int		i;
 
-	if (!a || !*a || lstsize(*a) == 1)
-		return ;
-	curr = lstlast(*a);
-	curr->next = *a;
-	*a = (*a)->next;
-	(*a)->prev = NULL;
-	curr->next->next = NULL;
-	curr->next->next = NULL;
-}
-
-void	ra(t_stack **a)
-{
-	rotate(a);
-}
-
-void	rb(t_stack **b)
-{
-	rotate(b);
-}
-
-void	rr(t_stack **a, t_stack **b)
-{
-	rotate(a);
-	rotate(b);
+	if (!lst)
+		return (0);
+	i = 0;
+	curr = lst;
+	while (curr != NULL)
+	{
+		curr = curr->next;
+		i++;
+	}
+	return (i);
 }

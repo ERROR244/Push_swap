@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions01.c                                      :+:      :+:    :+:   */
+/*   functions01_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:15:16 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/27 15:03:04 by ksohail-         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:46:23 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 long	ft_atol(const char *nptr)
 {
@@ -40,7 +40,7 @@ long	ft_atol(const char *nptr)
 
 void	error_msg1(void)
 {
-	ft_printf("Error\n");
+	write(1, "Error\n", 6);
 }
 
 int	duplicates(long value, long *values, int k, int l)
@@ -52,7 +52,7 @@ int	duplicates(long value, long *values, int k, int l)
 	{
 		if (value == values[i] && i != k)
 		{
-			ft_printf("Error\n");
+			write(1, "Error\n", 6);
 			return (0);
 		}
 		i++;
@@ -69,7 +69,7 @@ int	errors1(long *values, int l)
 	{
 		if (values[i] > INT_MAX || values[i] < INT_MIN)
 		{
-			ft_printf("Error\n");
+			write(1, "Error\n", 6);
 			return (0);
 		}
 		if (duplicates(values[i], values, i, l) == 0)
