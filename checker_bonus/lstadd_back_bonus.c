@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstadd_front.c                                     :+:      :+:    :+:   */
+/*   lstadd_back_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:09:19 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/06 11:09:22 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:09:26 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/29 21:01:31 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-void	lstadd_front(t_stack **lst, t_stack *new)
+void	lstadd_back(t_stack **lst, t_stack *new)
 {
-	if (new && lst)
+	t_stack	*curr;
+
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
 	{
-		new->next = *lst;
 		*lst = new;
+		return ;
 	}
+	curr = lstlast(*lst);
+	curr->next = new;
 }

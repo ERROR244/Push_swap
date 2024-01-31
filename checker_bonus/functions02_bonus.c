@@ -1,28 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstadd_back_bonus.c                                :+:      :+:    :+:   */
+/*   functions02_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksohail- <ksohail-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 11:09:26 by ksohail-          #+#    #+#             */
-/*   Updated: 2024/01/28 10:46:42 by ksohail-         ###   ########.fr       */
+/*   Created: 2024/01/06 11:08:02 by ksohail-          #+#    #+#             */
+/*   Updated: 2024/01/29 21:03:40 by ksohail-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	lstadd_back(t_stack **lst, t_stack *new)
+int	size(char **str)
 {
-	t_stack	*curr;
+	int	i;
 
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+bool	is_nsorted(t_stack *a)
+{
+	if (!a)
+		return (1);
+	while (a->next)
 	{
-		*lst = new;
-		return ;
+		if (a->value > a->next->value)
+			return (false);
+		a = a->next;
 	}
-	curr = lstlast(*lst);
-	curr->next = new;
+	return (true);
+}
+
+void	stack_init(t_stack **a, long *values, int l)
+{
+	int		i;
+	t_stack	*curr;
+	t_stack	*node;
+
+	i = 1;
+	*a = lstnew((int)values[0], *a);
+	while (i < l)
+	{
+		node = lstnew((int)values[i], *a);
+		curr = lstlast(*a);
+		curr->next = node;
+		i++;
+	}
 }
