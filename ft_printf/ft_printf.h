@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <stdlib.h>
+# include <stdint.h> 
 # include "../Libft/libft.h"
 # include <unistd.h>
 

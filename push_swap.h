@@ -15,6 +15,7 @@
 
 # include "Libft/libft.h"
 # include "ft_printf/ft_printf.h"
+# include <stdint.h> 
 # include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
